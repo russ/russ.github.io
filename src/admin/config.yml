@@ -19,7 +19,7 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: "Note", name: "description", widget: "markdown" }
+      - { label: "Note", name: "note", widget: "markdown" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - widget: select
         label: "tags"

@@ -1,0 +1,23 @@
+---
+layout: notes
+---
+
+<section class="mt-15">
+    {% set noteslist = collections.note %}
+
+    {% for note in noteslist | reverse %}
+        <article class="my-8">
+            <h2 class="font-bold text-3xl text-gray-900 mb-2">
+                <a href="{{ note.url | url }}">
+                    {{ note.data.note }}
+                </a>
+            </h2>
+            <p class="text-base leading-6 text-gray-500 mb-3">
+                <time>
+                    {{ note.date | readableDate }}
+
+                </time>
+            </p>
+        </article>
+    {% endfor %}
+</section>
