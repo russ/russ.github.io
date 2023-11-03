@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply text-white;
+  @apply bg-slate-950;
+
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+}
+
+/* Syntax Highlighting*/
+body :not(pre) > code[class*="language-"],
+body pre[class*="language-"] {
+  @apply bg-gray-800;
+}
+
+p {
+  @apply mb-4 leading-relaxed;
+}
+
+.animated {
+  @apply z-0 fixed inset-0 overflow-hidden;
+}
+
+.animated div {
+  position: absolute;
+  filter: blur(60px);
+  opacity: 0.8;
+}
+
+.animated .one {
+  @apply bg-indigo-950 aspect-square;
+
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  /* animation: fly 12s linear infinite; */
+  transform:rotate(0) translate(80px) rotate(0);
+}
+
+.animated .two {
+  @apply bg-stone-800;
+
+  width: 100%;
+  height: 100%;
+  bottom:-30px;
+  left:-80px;
+}
+
+.animated .three {
+  @apply bg-slate-950;
+
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+  bottom:-80px;
+  right:-100px;
+  /* animation: flyPlus 8s linear infinite; */
+  transform:rotate(0) translate(100px) rotate(0);
+}
+
+@keyframes fly {
+  100% {
+    transform:rotate(1turn) translate(100px) rotate(-1turn);
+  }
+}
+
+@keyframes flyPlus {
+  100% {
+    transform:rotate(-1turn) translate(100px) rotate(1turn);
+  }
+}
+
+.card {
+  @apply relative;
+  @apply flex flex-col justify-end p-4 overflow-hidden;
+
+  aspect-ratio: 3/2;
+}
+
+.card img {
+  @apply z-0 absolute inset-0 rounded-md shadow-2xl;
+
+  filter: brightness(0.5);
+}
+
+.card :is(h3, p) {
+  @apply z-10;
+
+  text-shadow: 0px 1px 16px black;
+}
+
+.card h3 {
+  @apply text-lg font-bold;
+}
+
+.card p {
+  @apply mb-0 p-0 text-gray-300;
+}
