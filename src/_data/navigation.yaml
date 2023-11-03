@@ -1,8 +1,5 @@
----
 items:
   - text: Home
-    url: "/"
-  - text: About
-    url: "/about"
+    url: /
   - text: Blog
-    url: "/blog"
+    url: /blog
